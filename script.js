@@ -1,9 +1,8 @@
 // =============================================================
-//  DEINE MUSIK – hier anpassen
-//  audio: Pfad zur MP3  →  assets/song1.mp3
-//  cover: Pfad zum Bild →  assets/song1.jpg  (oder null)
+//  audio: Pfad zur MP3  →  assets/songX.mp3
+//  cover: Pfad zum Bild →  assets/songX.jpg  (oder null)
 //  title: Anzeigename des Songs
-//  artist: Dein Künstlername
+//  artist: Dein Kuenstlername
 // =============================================================
 const TRACKS = [
   {
@@ -26,10 +25,10 @@ const TRACKS = [
   },
   // Neuen Song hinzufügen? Einfach hier reinkopieren:
   // {
-  //   title:  "Song Name 4",
-  //   artist: "Dein Name",
-  //   audio:  "assets/song4.mp3",
-  //   cover:  "assets/song4.jpg"
+  //   title:  "Song Name X",
+  //   artist: "kuenstler name",
+  //   audio:  "assets/songX.mp3",
+  //   cover:  "assets/songX.jpg"
   // },
 ];
 // =============================================================
