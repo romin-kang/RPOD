@@ -1,0 +1,263 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a1a1a;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  background: url('assets/background_ipod.jpg') center/cover no-repeat fixed;
+}
+/* ── iPod Body ── */
+.ipod {
+  width: 240px;
+  background: linear-gradient(160deg, #e8e8e8 0%, #c8c8c8 40%, #b0b0b0 100%);
+  border-radius: 30px;
+  padding: 18px 18px 24px 18px;
+  box-shadow:
+    0 2px 4px rgba(255,255,255,0.8) inset,
+    0 -2px 4px rgba(0,0,0,0.3) inset,
+    0 20px 60px rgba(0,0,0,0.7),
+    0 4px 12px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  user-select: none;
+}
+
+/* ── Screen ── */
+.screen-bezel {
+  width: 100%;
+  background: #222;
+  border-radius: 8px;
+  padding: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.8) inset, 0 1px 0 rgba(255,255,255,0.3);
+}
+.screen {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: #000;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.screen-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Now Playing ── */
+.now-playing {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  background: linear-gradient(180deg, #111 0%, #000 100%);
+}
+.cover-art {
+  width: 80px;
+  height: 80px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  flex-shrink: 0;
+}
+.cover-art img { width: 100%; height: 100%; object-fit: cover; }
+.cover-placeholder { font-size: 32px; color: #444; }
+
+.track-info { text-align: center; width: 100%; }
+.track-title {
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 4px;
+}
+.track-artist {
+  color: #aaa;
+  font-size: 9px;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 4px;
+}
+
+.progress-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  padding: 0 4px;
+}
+.progress-bar-wrap span { color: #888; font-size: 7px; flex-shrink: 0; }
+.progress-bar {
+  flex: 1;
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: #4a9eff;
+  border-radius: 2px;
+  transition: width 0.5s linear;
+}
+
+/* ── Playlist ── */
+.playlist-view {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #111 0%, #000 100%);
+}
+.playlist-header {
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  text-align: center;
+  padding: 5px 0;
+  border-bottom: 1px solid #333;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+.playlist-list {
+  list-style: none;
+  overflow-y: auto;
+  flex: 1;
+}
+.playlist-list::-webkit-scrollbar { display: none; }
+.playlist-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+  cursor: pointer;
+  border-bottom: 1px solid #1a1a1a;
+  transition: background 0.15s;
+}
+.playlist-item:hover  { background: #1a3a6a; }
+.playlist-item.active { background: #0a2a5a; }
+.playlist-item-cover {
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  overflow: hidden;
+  background: #333;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #555;
+}
+.playlist-item-cover img { width: 100%; height: 100%; object-fit: cover; }
+.playlist-item-info { overflow: hidden; }
+.playlist-item-title {
+  color: #fff;
+  font-size: 8.5px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.playlist-item-artist {
+  color: #888;
+  font-size: 7.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Click Wheel ── */
+.wheel-area {
+  width: 148px;
+  height: 148px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.click-wheel {
+  width: 148px;
+  height: 148px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 35% 30%, #ffffff 0%, #e0e0e0 30%, #c8c8c8 60%, #b0b0b0 100%);
+  box-shadow:
+    0 2px 4px rgba(255,255,255,0.9) inset,
+    0 -3px 8px rgba(0,0,0,0.25) inset,
+    0 4px 12px rgba(0,0,0,0.4),
+    0 1px 3px rgba(0,0,0,0.3);
+  position: relative;
+  cursor: pointer;
+}
+.wheel-label {
+  position: absolute;
+  color: #555;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s;
+}
+.wheel-label.top    { top: 14px;    left: 50%; transform: translateX(-50%); font-size: 7px; letter-spacing: 1.5px; }
+.wheel-label.bottom { bottom: 14px; left: 50%; transform: translateX(-50%); font-size: 11px; color: #666; }
+.wheel-label.left   { left: 14px;   top: 50%;  transform: translateY(-50%); font-size: 12px; color: #666; }
+.wheel-label.right  { right: 14px;  top: 50%;  transform: translateY(-50%); font-size: 12px; color: #666; }
+
+.center-btn {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 35% 30%, #ffffff 0%, #e8e8e8 40%, #d0d0d0 100%);
+  box-shadow:
+    0 1px 3px rgba(255,255,255,0.8) inset,
+    0 -1px 3px rgba(0,0,0,0.2) inset,
+    0 2px 6px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: all 0.1s;
+}
+.center-btn:active {
+  background: radial-gradient(ellipse at 35% 30%, #e0e0e0 0%, #d0d0d0 40%, #c0c0c0 100%);
+  box-shadow: 0 1px 2px rgba(255,255,255,0.5) inset, 0 1px 4px rgba(0,0,0,0.25);
+}
+
+/* ── Playing dot ── */
+.playing-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: #4a9eff;
+  display: inline-block;
+  margin-left: 3px;
+  animation: pulse 1s infinite;
+  vertical-align: middle;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
