@@ -6,22 +6,22 @@
 // =============================================================
 const TRACKS = [
   {
-    title:  "schniepel",
+    title:  "Pissy Pampers V2",
     artist: "romin",
     audio:  "assets/song1.mp3",
     cover:  "assets/song1.jpg"
   },
   {
-    title:  "Song Name 2",
+    title:  "Swag Type",
     artist: "romin",
     audio:  "assets/song2.mp3",
     cover:  "assets/song2.jpg"
   },
   {
-    title:  "Song Name 3",
+    title:  "Tenderism",
     artist: "romin",
     audio:  "assets/song3.mp3",
-    cover:  "assets/song3.jpg"
+    cover:  "assets/song3.avif"
   },
   // Neuen Song hinzufügen? Einfach hier reinkopieren:
   // {
